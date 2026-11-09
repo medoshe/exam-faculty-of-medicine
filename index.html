@@ -38,8 +38,10 @@ hr{border:0;border-top:1px solid #c8c8c8;width:100%;margin:0 0 .8rem}
 button:focus-visible{outline:2px solid #1f6fc9;outline-offset:2px}
 .pick{position:fixed;inset:0;background:#f1f1f1;display:flex;align-items:center;justify-content:center;z-index:4;padding:1rem}.pk{background:#fff;border:1px solid #dcdcdc;border-radius:.5rem;padding:2rem 2.5rem;text-align:center;direction:ltr;width:100%;max-width:24rem}.pk h1{margin:0 0 .6rem;font-size:1.4rem}.pk button{display:block;width:100%;margin-top:1rem;padding:.9rem;border:0;border-radius:.35rem;background:#0c6e5e;color:#fff;font:inherit;font-size:1.15rem;cursor:pointer}.pk small{display:block;font-size:.8rem;opacity:.85;margin-top:.15rem}.modal{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;z-index:5;padding:1rem}
 .modal.on{display:flex}
+#vers{display:grid;grid-template-columns:repeat(5,1fr);gap:.4rem;max-height:16rem;overflow:auto;margin-top:1rem}.pk #vers button{margin:0;padding:.6rem 0;font-size:.95rem}
 .box{background:#fff;padding:1.6rem 2rem;border-radius:.5rem;max-width:27rem;text-align:center;font-size:1.05rem;line-height:1.6}
 .box p{margin:0 0 1.2rem}
+.ov{position:fixed;inset:0;z-index:6;background:#f4f7f6;flex-direction:column;overflow:auto;direction:ltr;text-align:left}.ov nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;background:#fff;border-bottom:1px solid #dfe5e2}.ov nav b{font-size:1.2rem;color:#0c6e5e}.btn{display:inline-block;background:#0c6e5e;color:#fff;text-decoration:none;padding:.6rem 1.6rem;border-radius:.35rem;font-size:1rem}.hero{max-width:52rem;margin:0 auto;padding:4rem 1.5rem;text-align:center}.hero h1{font-size:2.3rem;margin:0 0 1rem;color:#14302a}.hero p{font-size:1.15rem;color:#4a5a55;margin:0 0 2rem}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:3rem;text-align:left}.cards div{background:#fff;border:1px solid #dfe5e2;border-radius:.5rem;padding:1.2rem}.cards b{display:block;margin-bottom:.4rem;color:#0c6e5e}.cards span{font-size:.9rem;color:#5a6a65}.lc{width:100%;max-width:24rem;margin:auto;background:#fff;border:1px solid #dcdcdc;border-radius:.6rem;padding:2rem}.lc h2{margin:0 0 1rem;color:#0c6e5e}.lc input{width:100%;padding:.7rem;margin:.4rem 0;border:1px solid #bbb;border-radius:.3rem;font:inherit}.lc button{width:100%;margin-top:.6rem;padding:.7rem;border:0;border-radius:.35rem;background:#0c6e5e;color:#fff;font:inherit;cursor:pointer}.lc p{font-size:.9rem;color:#444;line-height:1.5}#dc{background:#eef3f1;padding:.6rem;border-radius:.3rem;font-weight:700;letter-spacing:1px;text-align:center;user-select:all}#lerr{color:#c0261f;margin-top:.6rem;font-size:.9rem;min-height:1.2rem}.lc a{display:block;margin-top:1rem;text-align:center;color:#0c6e5e;font-size:.9rem}@media(max-width:700px){.cards{grid-template-columns:1fr}.hero h1{font-size:1.7rem}}
 .mb{display:flex;gap:.6rem;justify-content:center}
 .mb button{border:0;border-radius:.25rem;background:#0b6454;color:#fff;font:inherit;padding:.5rem 1.2rem;cursor:pointer}
 .mb button.alt{background:#7d8588}
@@ -63,10 +65,13 @@ button:focus-visible{outline:2px solid #1f6fc9;outline-offset:2px}
     </main>
   </div>
 </div>
-<div class="pick" id="pick"><div class="pk"><h1>Select your exam</h1><button id="b1">Midterm<small>64 questions · 65 minutes</small></button><button id="b2">Final<small>128 questions · 130 minutes</small></button></div><div class="pk" id="pk2" style="display:none"><h1>Final Exams</h1><div id="vers"></div><button id="bk" style="background:#7d8588">Back</button></div></div>
+<div class="ov" id="land" style="display:none"><nav><b>Online Examination</b><a class="btn" href="#login">Log in</a></nav><div class="hero"><h1>Your complete exam practice platform</h1><p>Timed midterm and final exams in a real exam environment. Log in with the account you received to begin.</p><a class="btn" href="#login">Log in to start</a><div class="cards"><div><b>Timed exams</b><span>Real countdown timer and full-screen exam mode.</span></div><div><b>Smart tracking</b><span>See solved, unsolved and flagged questions at a glance.</span></div><div><b>Secure access</b><span>Each account is activated for a single device.</span></div></div></div></div>
+<div class="ov" id="login" style="display:none"><div class="lc"><h2>Log in</h2><div id="lf1"><input id="lu" placeholder="Username" autocomplete="username"><input id="lp" type="password" placeholder="Password" autocomplete="current-password"><button id="lb1">Log in</button></div><div id="lf2" style="display:none"><p>This device must be activated. Send this device code to the seller, then enter the activation code you receive.</p><div id="dc"></div><input id="lc" placeholder="Activation code" autocomplete="off"><button id="lb2">Activate</button></div><div id="lerr"></div><a href="#home">Back to home</a></div></div>
+<div class="pick" id="pick"><div class="pk"><h1>Select your exam</h1><button id="b1">Midterm<small>64 questions · 65 minutes</small></button><button id="b2">Final<small>76 questions · 77 minutes</small></button><button id="lo" style="background:#7d8588;margin-top:1.4rem">Log out</button></div><div class="pk" id="pk2" style="display:none"><h1>Final Exams</h1><p style="margin:.2rem 0;font-size:.85rem">76 questions · 77 minutes each. Choose an exam.</p><div id="vers"></div><button id="bk" style="background:#7d8588">Back</button></div></div>
 <div class="modal" id="m"><div class="box" id="bx"><p id="mt"></p><div class="mb" id="mb"></div></div></div>
 <script>
 const $=id=>document.getElementById(id),D="٠١٢٣٤٥٦٧٨٩",ar=n=>String(n).replace(/\d/g,d=>D[d]);
+let running=false,curHash="";function setHash(h){curHash=h;if(location.hash!=="#"+h)location.hash=h}
 let N=64,Q={};const H="##################",L=["A","B","C","D"],BASE={};
 for(let i=1;i<=128;i++)BASE[i]={t:H,o:[H,H,H,H]};
 
@@ -98,7 +103,7 @@ function guard(fn){
   else fn();
 }
 function go(i){cur=i;pend=undefined;render()}
-function done(){clearInterval(timer);modal("Exam finished. Solved questions: "+Object.keys(ans).length+" of "+N+".",[["Back to exams",()=>{$("pick").style.display="flex"}]],"ltr")}
+function done(){running=false;if(document.fullscreenElement)document.exitFullscreen().catch(()=>{});setHash("result");clearInterval(timer);modal("Exam finished. Solved questions: "+Object.keys(ans).length+" of "+N+".",[["Back to exams",()=>{$("pick").style.display="flex";setHash("exams")}]],"ltr")}
 function buildGrid(){$("grid").innerHTML="";for(let i=1;i<=N;i++){const b=document.createElement("button");b.className="s";b.textContent=i;b.onclick=()=>guard(()=>go(i));$("grid").appendChild(b)}}
 $("next").onclick=()=>{if(pend===undefined&&ans[cur]===undefined){modal("Not allowed. You must select an answer before pressing Next. To move to another question without answering, click it in the question grid.",[["OK"]],"ltr");return}const p=cur;if(pend!==undefined){ans[cur]=pend;pend=undefined}go(cur<N?cur+1:cur);scrollToQ(p)};
 $("mark").onclick=()=>{flag[cur]?delete flag[cur]:flag[cur]=1;paint()};
@@ -193,7 +198,146 @@ Lanugo hair is a description for:|Temporary body hair of the fetus at the middle
 The body length, by the end of pregnancy is about:|36 cm|50 cm|75 cm|One meter
 After the 5th month of fetal development, the main source of amniotic fluid is:|Secretion of amnioblasts|Urine formed by the kidney|Secretions by developing gut|Sweating
 A morphological change that occurs in spermatids to be mature sperms:|Spermatogenesis|Spermiogenesis|Sperm capacitation|Acrosomal reaction
-A caudal midline linear thickening of the embryonic disc. It is the site of invagination of epiblast:|Neural tube|Notochord|Primitive streak|Allantois`.split("\n").map(l=>{const p=l.split("|");return{t:p[0],o:p.slice(1)}});
+A caudal midline linear thickening of the embryonic disc. It is the site of invagination of epiblast:|Neural tube|Notochord|Primitive streak|Allantois
+According to the position of centromere, if the centromere is central, the chromosomes are:|Metacentric|Submetacentric|Acrocentric|Telocentric
+According to the structural anomalies of the chromosomes, loss of piece of chromatid is called:|Deletion|Translocation|Inversion|Isochromosome
+The process of sperms formation in male is called:|Gametogenesis|Oogenesis|Spermatogenesis|Spermiogenesis
+It starts from early fetal period & stops temporarily till puberty, it is:|Gametogenesis|Oogenesis|Spermatogenesis|Spermiogenesis
+Ovarian cycle is under control of ........ hormone:|Estrogen|Progesterone|Oxytocin|LH & FSH
+If pregnancy doesn't occur, the corpus luteum lives 9 days then it shrinks gradually forming:|The zygote|The corpus callosum|The corpus albicans|Theca cells
+........ is a process of repeated mitotic cell divisions of the fertilized ovum to produce cell cluster of the same size of the original zygote:|Implantation|Folding|Cleavage|Gastrulation
+A mass of blastomeres with a cavity inside is called:|Blastocyst|Morula|Zona pellucida|Zygote
+Which of the following fibers can be stained with orcein stain?|Collagen fibers|Elastic fibers|Reticular fibers|Cardiac muscle fibers
+Where can mucoid connective tissue be found?|Tendons of muscles|Sclera of eye|Umbilical cord|Wall of aorta
+Trachea is lined by:|Pseudo-stratified columnar ciliated epithelium with goblet cells|Pseudo-stratified columnar ciliated|Stratified columnar non ciliated|Simple columnar epithelium
+Holocrine secretion:|No change or loss of any part of cell during secretion|Apical part removed with secretion|Whole cell destructed with secretion|Not found in human
+Follicular phase of ovarian cycle is under control of ........ hormone:|FSH|LH|Estrogen|Progesterone
+Intervertebral disc is formed of:|Hyaline cartilage|Yellow elastic cartilage|White fibro-cartilage|Compact bone
+Which cell is responsible for appositional growth of cartilage?|Chondroblast|Chondrocyte|Osteoblast|Osteocyte
+Which cell is present in Howship's lacuna?|Osteogenic cell|Osteoblast|Osteocyte|Osteoclast
+What is compact bone?|Dense bone|Immature bone|Cancellous bone|Spongy bone
+Long bone grows in length as a result of:|Removal of calcified cartilage|Interstitial growth of cartilage tissue|Appositional deposition of bone tissue|Interstitial growth of bone tissue
+Which of the following bones is (are) formed by intramembranous ossification?|The metatarsals|The femurs|The ribs|The flat bones of the skull
+Implantation is the process of:|Attachment of blastocyst to the uterine wall|Ovum movement|Degeneration of ovum|Ovum fertilization
+Spaces filled with maternal blood, called ........, appear within the syncytiotrophoblast with starting of the placental circulation:|Deciduas|Lacunae|Villi|Epiblasts
+........ is the process of formation of trilaminar germ disc:|Neurulation|Gastrulation|Folding|Migration
+Folding of the embryo begins by the end of 3rd week & completed by:|4th week|5th week|6th week|7th week
+Bending of the trilaminar germ disc around its central axis is known as:|Implantation|Gastrulation|Folding|Neurulation
+By the end of 2nd month, the head becomes more rounded and large, forming about:|Half length of the body|One third length of the body|One fourth length of the body|The same length of the body
+The heart is formed and is beating rhythmically by the end of:|1st month|2nd month|3rd month|4th month
+Conjoined twin is incomplete separation of:|Dizygotic twins|Triple twins|Monozygotic twins|None of the above
+In monozygotic twins, if division occurred at two cell stage, each fetus has:|Its own chorion, placenta and amniotic sac|Separate amniotic sac but common chorion and placenta|Common chorion, placenta and amniotic sac|Different sex
+The functional unit of exchange between fetus and the mother is:|Amnion|Placenta|Umbilical cord|Amniotic fluid
+Fetal part of the placenta is:|Chorion frondosum|Decidua basalis|Decidua capsularis|Decidua parietalis
+........ is a soft tortuous structure which connects the fetus to the placenta:|Amnion|Umbilical cord|Chorion|Fallopian tube
+Failure of reduction of the physiological hernia back to the abdominal cavity is called:|Short cord|Omphalocele|True knot|Velamentous cord
+Group of anomalies occurring together by a specific cause is called:|Malformations|Disruptions|Deformations|Syndromes
+Primary ossification centers appear in long bones during:|2nd month|3rd month|4th month|5th month
+........ is soft, unpigmented downy hairs that cover the whole fetal skin between 5-7 months of pregnancy:|Coarse hair|Vernix hair|Lanugo hair|Back hair
+The amniotic cavity surrounds the whole embryo after:|Implantation|Cleavage|Folding|Gastrulation
+The amniotic cavity enlarges & obliterates the chorionic cavity by the:|5th week|10th week|15th week|20th week
+Abnormal extensions from the amniotic membrane that may tie around fetal parts. This case is called:|Polyhydramnios|Oligohydramnios|Amniocentesis|Amniotic band syndrome
+They are all contents of the primitive umbilical ring, except:|Vitelline duct|Connecting stalk|Cloacal membrane|Connection between intra- & extra-embryonic coelom
+Wharton's jelly is derivative of:|Allantois|Mesoderm of the connecting stalk|Vitello-intestinal duct|Amniotic membrane
+The cord is inserted to the chorion some distance from the placenta:|Omphalocele|Eccentric cord attachment to placenta|True knot|Velamentous cord attachment to placenta
+This layer of endometrium covers the implanted chorionic vesicle:|Decidua basalis|Decidua capsularis|Decidua parietalis|Germinative layer
+Large villi that extend to decidua basalis to the chorionic plate for fixation of placenta:|Chorion frondosum|Stem villi|Free villi|Primary villi
+A description for abnormal invasion of chorion to the uterine wall:|Bi-partite placenta|Tri-partite placenta|Placenta succenturiata|Placenta increta
+Fusion of twins at the pelvis is called:|Cranio-pagus twins|Thoraco-pagus twins|Pygo-pagus twins|Parasitic twins
+The science for description of birth defects:|Teratogenic|Teratogenesis|Teratology|Congenital anomalies
+Morphological alterations of already formed structures:|Malformation|Disruption|Deformation|Syndrome
+Which statement is true about macrophages?|They originate from blood monocytes|They originate from B lymphocytes|They originate from T lymphocytes|They originate from plasma cells
+Which statement is true about brown adipose connective tissue?|It is found in intrascapular region|It is found in subcutaneous tissue|It is found in yellow bone marrow|It is poor in blood supply
+Which of the following is correct about the epithelial tissue?|Innervated|Highly vascularized|Has no polarity|Its cells are widely separated
+Apocrine gland has the following character:|The basal part of its epithelium is lost with the secretion|The apical part of its epithelium is lost with the secretion|The whole epithelial cell is destroyed with the secretion|The secretion is released by exocytosis
+The function of the epithelium is usually adopted to their structure. According to this statement, gaseous exchange occurs through ........ epithelium:|Stratified squamous|Transitional|Simple columnar|Simple squamous
+Waxy secretion is released from glands of:|External ear|Stomach|Testis|Ovary
+Which statement is true about plasma cells?|They have metachromatic granules|They have clock face nucleus|They have strong acidophilic cytoplasm|They have multiple cytoplasmic processes
+How many ribs articulate posteriorly with the vertebral column?|7 pairs|9 pairs|10 pairs|12 pairs
+An elongated tubular structure proximal to the urinary bladder:|Kidney|Ureter|Prostatic urethra|Penile urethra
+The uppermost part of the sternum:|Xiphoid process|Body|Tubercle|Manubrium sterni
+This nerve is motor to pharynx, larynx & parasympathetic to the heart:|Glossopharyngeal nerve|Accessory nerve|Vagus nerve|Hypoglossal nerve
+The most abundant fibers in the matrix of hyaline cartilage are ........:|Collagen type I|Collagen type II|Collagen type III|Elastic fibers
+A cell that secretes acid collagenase and has more than one nucleus is:|Osteoclast|Osteogenic cell|Osteoblast|Osteocyte
+Intramembranous ossification occurs at:|8th week of gestation|8th month of gestation|12th week of gestation|18th week of gestation
+Sperms are stored and become functionally mature in the:|Seminiferous tubules|Epididymis|Ductus deferens|Seminal vesicles
+Oogenesis begins:|Intrauterine life|After birth|At puberty|At menopause
+Middle piece of the mature sperm is made by:|Mitochondria|Nucleus|Centriole|Flagellum
+In the absence of acrosome the sperm cannot:|Penetrate into ovum|Get energy|Get food|Swim
+The maternal part of the placenta is formed by:|Chorion frondosum|Chorion laeve|Decidua basalis|Amniotic membrane
+A description for accessory lobe of placenta:|Bi-partite placenta|Tri-partite placenta|Placenta succenturiata|Placenta increta
+Twins formed by splitting of the inner cell mass at the blastocyst stage would lead to:|Fraternal twins|Common chorion but separate amnion|Common chorion & amnion|Separate chorion & amnion
+A low level for alpha fetoprotein could be detected in:|Omphalocele|Cranium bifidum|Down syndrome|Polydactyly
+Sperms last ............. before reaching the ampulla of the fallopian tube:|8 days|15 days|2-3 days|10 days
+The normal site of implantation is:|The upper part of the posterior wall of the uterus near to the fundus|The lower part of the posterior wall of the uterus near to the fundus|The upper part of the anterior wall of the uterus near to the fundus|The lower part of the anterior wall of the uterus near to the fundus
+Production of human chorionic gonadotrophin hormones occurred from:|Epiblast|Hypoblast|Cytotrophoblast|Syncytiotrophoblast
+Epiblast cells at the primitive node proliferate & migrate cranially between endoderm & ectoderm to form ..............:|Primitive streak|Primitive canal|Notochord process|Neuroenteric canal
+When the umbilical cord is attached to the chorion some distance from the placenta, it is called:|Battledore placenta|Marginal attachment|Velamentous attachment|Bipartite placenta
+A female patient admitted to hospital complaining from infertility. By investigation, the problem was detected in her fallopian tube's epithelium lining. Could you choose what is the normal fallopian lining?|Simple columnar epithelium|Simple columnar ciliated|Simple cuboidal|Simple cuboidal ciliated
+A 15-year-old male patient came to the surgical clinic with severe pain in the ankle after playing football with his colleagues. By examination, there was injury in the tendon of the calf muscle. Which type of CT is this tendon formed of?|Elastic CT|Reticular CT|Regular white fibrous CT|Irregular white fibrous CT
+Bones, ligaments & skeletal muscles are derived from:|Ectoderm|Intermediate mesoderm|Paraxial mesoderm|Endoderm
+A needle is inserted trans-abdominally into the amniotic cavity, guided by ultrasound, called:|Chorionic villi sampling|Amniocentesis|Maternal serum screening|Ultrasonography
+The apex of the heart is formed by:|RT & LT atria|RT & LT ventricles|RT ventricle only|LT ventricle only
+Its function is regulation of muscle tone and equilibrium:|Spinal cord|Cerebrum|Cerebellum|Autonomic nervous system
+The right lung is larger & shorter due to the elevated right copula of the diaphragm by:|Right lobe of liver|Left lobe of the liver|Stomach|Colon
+The kidneys are present on each side of the vertebral column at the level between:|T10 to L1 vertebrae|T11 to L2 vertebrae|T12 to L3 vertebrae|L1 to L4 vertebrae
+The exocrine function of the ovaries is:|Secretion of estrogen|Secretion of progesterone|Production of ova|Secretion of LH & FSH
+Which statement is true about mast cells?|They have numerous lysosomes|They are characterized by presence of negative Golgi image in their cytoplasm|They have numerous metachromatic granules|They can be demonstrated by vital stain
+A 15-year-old male patient came to the surgical clinic with severe pain in the ankle after playing football. Which of the following cells is responsible for repairing this tendon?|Macrophages|Plasma cells|Fibroblasts|Mast cells
+The tarsal bones are arranged into two rows:|True|False
+Its main function is removal of nitrogen waste products from the body:|Urinary system|Respiratory system|Digestive system|Reproductive system
+The ureters attach to the bladder at a straight course:|True|False
+The 3rd & 4th cranial nerves are responsible for eye movement:|True|False
+When the fist is clenched, the ________ become obvious as the knuckles:|Carpals|Heads of metacarpals|Bases of metacarpals|Phalanges
+One of the following cells can be found in lacuna:|Chondroblast|Chondrocyte|Chondrogenic cell|Osteoblast
+Adding new cells and matrix on cartilage surface is known as ........:|Intramembranous ossification|Interstitial growth|Appositional growth|Bone remodeling
+Organic matrix of bone contains:|Calcium|Phosphate|Collagen type I|Collagen type II
+Degeneration of chondrocytes occurs at which stage of growth?|Resting zone|Proliferative zone|Calcification zone|Ossification zone
+According to the structural anomalies of the chromosomes, transverse separation of centromere is called:|Ring chromosome|Translocation|Inversion|Isochromosome
+In gamete cell, the human chromosomes are:|Haploid number|Triploid number|Tetraploid number|Diploid number
+In submetacentric chromosome, the centromere is:|At the end|Near to the center|Central
+The thyroid gland is situated at front of the lower part of the neck and spans from the:|C1-C3 vertebra|C3-C4 vertebra|C5-T1 vertebra|T2-T5 vertebra
+The pituitary gland lies in the:|Anterior cranial fossa|Middle cranial fossa|Posterior cranial fossa
+A thickened rod-like structure present at the caudal part of the embryonic disc is called:|Primitive streak|Primitive node|Primitive pit|Notochord
+Remnants of notochord give:|Annulus fibrosis of intervertebral disc|The nucleus pulposus of intervertebral disc|Vertebrae|Spinal cord
+Dorsal root ganglia of spinal cord arise from:|Spinal cord|Neural plate|Neural tube|Neural crest
+Allantois will form:|Yolk sac|Amniotic cavity|Connecting stalk|Urinary bladder
+Somites are derived from:|Paraxial mesoderm|Intermediate mesoderm|Lateral plate mesoderm|Notochord
+Genitourinary system is derived from:|Paraxial mesoderm|Intermediate mesoderm|Lateral plate mesoderm|Notochord
+Digestive system except mouth vestibule & lower 1/3 of anal canal is derived from:|Ectoderm|Mesoderm|Endoderm|Trophoblast
+Lining of urinary bladder is derived from:|Ectoderm|Mesoderm|Endoderm|Trophoblast
+The vitello-intestinal duct connects:|The foregut to the definitive yolk sac|The midgut to the definitive yolk sac|The hindgut to the definitive yolk sac|The intra-embryonic & extra-embryonic cavities
+Fate of umbilical vessels:|The right umbilical vein is degenerated with persistence of the left umbilical vein & the two umbilical arteries|The left umbilical vein is degenerated with persistence of the right umbilical vein & the two umbilical arteries|The right umbilical artery is degenerated with persistence of the left umbilical artery & the two umbilical veins|The left umbilical artery is degenerated with persistence of the right umbilical artery & the two umbilical veins
+The attachment points for spindle fibers in chromosomes are .......:|Kinetochores|Centromere|q arm|p arm
+Which type of stem cells only produces closely related cells?|Multipotent|Totipotent|Pluripotent|Oligopotent
+Which one of the following is a morphological feature of apoptosis?|Chromatin aggregation|Euchromatic nucleus|Swollen cell membrane|Inflammatory cells infiltration
+In human somatic cells, the cell cycle lasts about 18 hours, and the ------ phase takes up about 1/3 of that time:|G1|G2|S|M
+Regarding stable tissue:|Never enter G0 stage of the cell cycle|These cells are capable of dividing in response to injury or loss of tissue mass|These cells are not capable of dividing in response to injury or loss of tissue mass|These cells are terminally differentiated and non-proliferative in postnatal life
+Which of the following cell membrane modifications is made of microtubules?|Microvilli|Stereocilia|Cilia|Desmosome
+Intestinal epithelial cells play an important role in the absorption of different nutrients. Which one of the following cell membrane modifications can provide this large surface area?|Microvilli|Stereocilia|Cilia|Flagella
+Which of the following is not considered as a part of the junctional complex?|Tight junction|Zonula adherens|Desmosome|Gap junction
+Filaments of newly formed rRNA are located within ........ of nucleolus:|Nucleolar organizer region|Pars fibrosa|Pars granulosa|Light area
+Which of the following is true about heterochromatin?|Prominent in active cells|Lightly stained|Less compact|Prominent in inactive cells
+Neuroepithelium is formed of:|Sensory and basal cells only|Sensory, supporting, and basal cells|Sensory, basal, supporting, and goblet cells|Supporting and basal cells only
+The esophagus is lined with:|Stratified columnar epithelium|Stratified squamous keratinized|Stratified squamous non keratinized|Stratified columnar ciliated
+A patient was admitted to hospital complaining of painful urination and bleeding in urine. A biopsy from the bladder showed carcinoma. What is the normal epithelium lining of the urinary bladder?|Transitional epithelium|Stratified columnar|Stratified cuboidal|Stratified squamous non keratinized
+Immature inner layer of cells with well-defined cell boundaries is called:|Syncytiotrophoblast|Cytotrophoblast|Epiblast|Hypoblast
+Production of human chorionic gonadotrophin is by:|Syncytiotrophoblast|Cytotrophoblast|Epiblast|Hypoblast
+What is the correct lineage of a zygote?|Zygote -> Blastomere -> Morula -> Blastocyst|Zygote -> Morula -> Blastomere -> Blastula|Zygote -> Blastula -> Morula -> Blastocyst|Zygote -> Blastocyst -> Blastula -> Blastomere
+The process of formation of trilaminar germ disc:|Blastocyst|Morula|Gastrulation|Notochord
+A 7-year-old boy presented to a clinic with skin redness with patches and itching all over his body. His mother gave a history of eating strawberries about 5 hours before the appearance of these symptoms. There were elevated serum levels of histamine and heparin. Which cell of the following is responsible for this case?|Plasma cell|Mast cell|Macrophage|Fibroblast
+Articular surfaces of various synovial joints are formed of ..................:|Hyaline cartilage|Elastic cartilage|Fibrocartilage|Spongy bone
+Deposition of new cartilage on the surface of existing cartilage is defined as ............:|Interstitial growth|Appositional growth|Intramembranous growth|Intracartilaginous growth
+Which of the following cells are not present in lacuna?|Osteocyte|Osteoclast|Osteoblast|Chondrocyte
+Type of fibers present in the inter-vertebral discs is:|Elastic fibers|Collagen type I|Collagen type II|Collagen type III
+The organic component of bone matrix is formed mainly of:|Calcium, phosphorous|Bicarbonates|Collagen type I|Collagen type II
+The interior of all bones, mainly flat bones, is formed of:|Elastic cartilage|Compact bone|Spongy bone|Hyaline cartilage
+According to the position of centromere, if the centromere is near to the center, the chromosomes are:|Metacentric|Submetacentric|Acrocentric|Telocentric
+Sperm count in the seminal fluid is up to:|1 million/ml|50 million/ml|75 million/ml|120 million/ml
+The 2 meiotic divisions of oocyte are completed after:|Oogenesis|Pregnancy|Fertilization|Cleavage
+It involves removal of surface coating glycoprotein and changes in sperm plasma membrane, it is:|Spermatogenesis|Spermiogenesis|Cortical reaction|Capacitation
+It is still surrounded by zona pellucida, and is formed about 72 hrs after fertilization:|Blastocyst|Morula|Zona pellucida|Zygote
+Necrozospermia: semen contains:|Dead sperms|Low sperm count|No sperms|Malformed sperms`.split("\n").map(l=>{const p=l.split("|");return{t:p[0],o:p.slice(1)}});
 const W=`Define a neuron and state its structural components.
 Enumerate the main parts of the brain.
 List the three protective membranes (meninges) covering the brain from outward to inward.
@@ -380,15 +524,33 @@ Bone is considered a type of CT with a hard matrix. Classify the bone matrix.
 Osteoclasts are considered bone-eating cells and have a structure to adapt their function. Give a short account of the origin, structure, and functions of these cells.`.split("\n").map(t=>({t,w:1}));
 function seeded(s){return()=>{s|=0;s=s+0x6D2B79F5|0;let t=Math.imul(s^s>>>15,1|s);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
 const shufS=(a,r)=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
-function buildFinal(v){const r=seeded(v*7919+13),q={};shufS(M,r).slice(0,89).concat(shufS(W,r).slice(0,39)).forEach((x,i)=>q[i+1]=x);return q}
-const EX={mid:{n:64,m:65},fin:{n:128,m:130}};
-function begin(k){const f=k[0]=="f";Q=f?buildFinal(+k.slice(1)):BASE;N=f?Object.keys(Q).length:EX.mid.n;ans={};flag={};cur=1;pend=undefined;s=EX[f?"fin":k].m*60;buildGrid();tick();render();$("pick").style.display="none";pk2.style.display="none";pk1.style.display="block";clearInterval(timer);timer=setInterval(()=>{if(s>0){s--;tick();if(!s)done()}},1000)}
-function choose(k,name){const e=EX[k[0]=="f"?"fin":k];modal("You are about to start the "+name+" exam ("+e.n+" questions). The exam will start now and the timer will begin ("+e.m+" minutes). Do you want to start?",[["Start Exam",()=>begin(k)],["Cancel",null,1]],"ltr")}
+const NF=Math.floor(M.length/76),FIN=shufS(M,seeded(2025));
+function buildFinal(v){const q={};FIN.slice((v-1)*76,v*76).forEach((x,i)=>q[i+1]=x);return q}
+const EX={mid:{n:64,m:65},fin:{n:76,m:77}};
+function begin(k){const f=k[0]=="f";Q=f?buildFinal(+k.slice(1)):BASE;N=f?Object.keys(Q).length:EX.mid.n;ans={};flag={};cur=1;pend=undefined;s=EX[f?"fin":k].m*60;running=true;try{document.documentElement.requestFullscreen().catch(()=>{})}catch(e){}setHash(f?"final-"+k.slice(1):"midterm");buildGrid();tick();render();$("pick").style.display="none";pk2.style.display="none";pk1.style.display="block";clearInterval(timer);timer=setInterval(()=>{if(s>0){s--;tick();if(!s)done()}},1000)}
+function choose(k,name){const e=EX[k[0]=="f"?"fin":k];modal("You are about to start the "+name+" exam ("+e.n+" questions). The exam will start now and the timer will begin ("+e.m+" minutes). The exam opens in full screen; leaving full screen (F11 or Esc) cancels the exam and resets it. Do you want to start?",[["Start Exam",()=>begin(k)],["Cancel",null,1]],"ltr")}
 $("b1").onclick=()=>choose("mid","Midterm");
 const pk1=$("b1").parentNode,pk2=$("pk2");
-for(let v=1;v<=5;v++){const b=document.createElement("button");b.innerHTML="Final Exam "+v+"<small>128 questions · 130 minutes</small>";b.onclick=()=>choose("f"+v,"Final (Exam "+v+")");$("vers").appendChild(b)}
-$("b2").onclick=()=>{pk1.style.display="none";pk2.style.display="block"};
-$("bk").onclick=()=>{pk2.style.display="none";pk1.style.display="block"};
+for(let v=1;v<=NF;v++){const b=document.createElement("button");b.textContent=v;b.onclick=()=>choose("f"+v,"Final (Exam "+v+")");$("vers").appendChild(b)}
+$("b2").onclick=()=>setHash("final");
+$("bk").onclick=()=>setHash("exams");
+const SECRET="Q7m!x92Lw4Rb",SALT="exam-salt",USERS={"demo":"1u7qhx5jj99a0ezs0jfjw2a2j6j83a8o"};
+const h53=(s,seed=0)=>{let h1=0xdeadbeef^seed,h2=0x41c6ce57^seed;for(let i=0,c;i<s.length;i++){c=s.charCodeAt(i);h1=Math.imul(h1^c,2654435761);h2=Math.imul(h2^c,1597334677)}h1=Math.imul(h1^h1>>>16,2246822507)^Math.imul(h2^h2>>>13,3266489909);h2=Math.imul(h2^h2>>>16,2246822507)^Math.imul(h1^h1>>>13,3266489909);return(4294967296*(2097151&h2)+(h1>>>0)).toString(36)};
+const H2=s=>h53(s,1)+h53(s,2)+h53(s,3);
+const ls={g:k=>{try{return localStorage.getItem(k)}catch(e){return null}},s:(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}},r:k=>{try{localStorage.removeItem(k)}catch(e){}}};
+const devId=()=>{let d=ls.g("dev");if(!d){d=(Math.random().toString(36)+"00000000").slice(2,10).toUpperCase();ls.s("dev",d)}return d};
+const cnt=()=>+ls.g("n")||0;
+const code=(u,d,n)=>{const x=H2(SECRET+"|"+u+"|"+d+"|"+n).toUpperCase().replace(/[^A-Z0-9]/g,"").slice(0,12);return x.match(/.{4}/g).join("-")};
+const auth=()=>{try{const a=JSON.parse(ls.g("act")||"null");return a&&USERS[a.u]&&a.d===devId()&&a.n===cnt()&&a.c===code(a.u,a.d,a.n)?a:null}catch(e){return null}};
+let pu=null;
+function loginReset(){pu=null;$("lf1").style.display="block";$("lf2").style.display="none";$("lerr").textContent="";$("lu").value="";$("lp").value="";$("lc").value=""}
+$("lb1").onclick=()=>{const u=$("lu").value.trim().toLowerCase(),p=$("lp").value;if(USERS[u]&&USERS[u]===H2(SALT+"|"+u+"|"+p)){pu=u;$("lf1").style.display="none";$("lf2").style.display="block";$("dc").textContent=devId()+"-"+cnt();$("lerr").textContent=""}else $("lerr").textContent="Invalid username or password."};
+$("lb2").onclick=()=>{const c=$("lc").value.trim().toUpperCase(),d=devId(),n=cnt();if(pu&&c===code(pu,d,n)){ls.s("act",JSON.stringify({u:pu,d,n,c}));setHash("exams")}else $("lerr").textContent="Invalid activation code."};
+$("lo").onclick=()=>{ls.r("act");ls.s("n",cnt()+1);setHash("home")};
+function route(){const h=location.hash.slice(1),a=auth();if(running){if(h!==curHash)location.hash=curHash;return}if(!a){if(h!="home"&&h!="login"){setHash("home");return}$("land").style.display=h=="home"?"flex":"none";$("login").style.display=h=="login"?"flex":"none";$("pick").style.display="none";if(h=="login")loginReset();return}$("land").style.display="none";$("login").style.display="none";if(h==""||h=="home"||h=="login"){setHash("exams");return}if(h=="result")return;$("pick").style.display="flex";const m=h.match(/^final-(\d+)$/);if(h=="final"||m){pk1.style.display="none";pk2.style.display="block"}else{pk2.style.display="none";pk1.style.display="block"}if(h=="midterm")choose("mid","Midterm");else if(m&&+m[1]>=1&&+m[1]<=NF)choose("f"+m[1],"Final (Exam "+m[1]+")")}
+let fsOn=false;function resetExam(){running=false;clearInterval(timer);ans={};flag={};pend=undefined;$("m").classList.remove("on");$("pick").style.display="flex";pk2.style.display="none";pk1.style.display="block";setHash("exams")}
+document.addEventListener("fullscreenchange",()=>{if(document.fullscreenElement){fsOn=true;return}if(fsOn&&running)resetExam();fsOn=false});
+addEventListener("hashchange",route);route();
 tick();
 </script>
 </body>
